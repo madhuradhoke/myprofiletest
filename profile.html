@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhura — Creative Developer</title>
+<style>
+:root{
+  --bg:#f7f3ee; --card:rgba(255,255,255,.68); --text:#27252a;
+  --muted:#77727a; --accent:#8f6b9d; --accent2:#d6b8c8;
+  --line:rgba(39,37,42,.10); --shadow:0 20px 60px rgba(64,45,55,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text); background:
+  radial-gradient(circle at 10% 10%,#eadcf0 0,transparent 28%),
+  radial-gradient(circle at 90% 20%,#f2dce1 0,transparent 27%),
+  radial-gradient(circle at 50% 90%,#e7e0d4 0,transparent 30%),var(--bg);
+  line-height:1.6; overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;width:min(920px,calc(100% - 32px));padding:11px 16px;border:1px solid var(--line);background:rgba(255,255,255,.58);backdrop-filter:blur(18px);border-radius:999px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 10px 35px rgba(50,40,50,.08)}
+.logo{font-weight:800;letter-spacing:-.04em}.logo span{color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;font-size:.86rem;margin-left:18px}nav a:hover{color:var(--text)}
+main{width:min(1060px,calc(100% - 36px));margin:auto}
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.35fr .8fr;gap:70px;align-items:center}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-weight:800;margin-bottom:16px}
+h1{font-size:clamp(3.5rem,9vw,7rem);line-height:.9;letter-spacing:-.075em;margin-bottom:25px}
+h1 em{font-family:Georgia,serif;font-weight:400;color:var(--accent)}
+.hero p{max-width:650px;color:var(--muted);font-size:1.08rem}
+.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{padding:12px 19px;border-radius:999px;text-decoration:none;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--text);color:#fff}.btn.secondary{color:var(--text);background:rgba(255,255,255,.45)}
+.profile-card{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:34px;padding:24px;box-shadow:var(--shadow);transform:rotate(2deg)}
+.avatar{height:330px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(145deg,#d9c3df,#f0d8d7 48%,#d8cfc1);font-size:6rem;font-family:Georgia,serif;color:#fff;box-shadow:inset 0 0 80px rgba(255,255,255,.28)}
+.card-caption{display:flex;justify-content:space-between;align-items:end;padding:17px 3px 0}.card-caption strong{display:block}.card-caption small{color:var(--muted)}
+section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px;gap:30px}.section-head h2{font-size:2.5rem;letter-spacing:-.055em}.section-head p{color:var(--muted);max-width:430px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:22px}.glass{background:var(--card);border:1px solid rgba(255,255,255,.8);border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+.about p{color:#5e5960}.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fact{padding:20px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.35)}.fact b{display:block;font-size:1.25rem}.fact span{font-size:.82rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.tag{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.84rem}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{min-height:270px;display:flex;flex-direction:column;justify-content:space-between}.project-num{font-size:.78rem;color:var(--accent);font-weight:800;letter-spacing:.12em}.project h3{font-size:1.45rem;letter-spacing:-.04em;margin:12px 0 7px}.project p{font-size:.9rem;color:var(--muted)}.project .mini{font-size:.75rem;margin-top:18px;color:#625b63}
+.timeline{display:grid;gap:14px}.timeline-item{display:grid;grid-template-columns:140px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}.timeline-item:last-child{border-bottom:0}.year{color:var(--accent);font-weight:800}.timeline-item h3{margin-bottom:4px}.timeline-item p{color:var(--muted)}
+.interests{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.interest{padding:25px;border-radius:25px;background:rgba(255,255,255,.5);border:1px solid var(--line);transition:.25s}.interest:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.icon{font-size:1.7rem;margin-bottom:15px}.interest span{color:var(--muted);font-size:.82rem}
+footer{padding:55px 0 35px;text-align:center;color:var(--muted);font-size:.84rem}footer strong{color:var(--text)}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){nav a{display:none}.hero-grid,.about{grid-template-columns:1fr}.profile-card{max-width:430px;margin:auto}.projects{grid-template-columns:1fr 1fr}.interests{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){main{width:min(100% - 26px,1060px)}section{padding:70px 0}.projects,.interests,.facts{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:4px}.avatar{height:270px}.hero{padding-top:100px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">madhura<span>.</span></div>
+  <div>
+    <a href="#about">About</a><a href="#work">Work</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Engineering student · Creative mind</div>
+      <h1>Hi, I'm <em>Madhura.</em></h1>
+      <p>I’m an IT engineering student exploring the space where technology, design and creativity meet — from coding projects and hackathons to visual design and college communities.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#work">Explore my work ↓</a>
+        <a class="btn secondary" href="#contact">Let's connect</a>
+      </div>
+    </div>
+    <div class="profile-card reveal">
+      <div class="avatar">M</div>
+      <div class="card-caption">
+        <div><strong>Creative × Tech</strong><small>Building, learning & experimenting</small></div>
+        <span>✦</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head reveal"><h2>A little about me</h2><p>Not just code. I like learning by actually making things.</p></div>
+  <div class="about">
+    <div class="glass reveal">
+      <p>I'm an IT engineering student at TCET with a growing interest in software development, DSA, AI-assisted development and hackathons. At the same time, I love the creative side of technology — Canva, visual storytelling, presentations, event promotion and experimenting with aesthetics.</p>
+      <div class="tags">
+        <span class="tag">DSA</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span>
+        <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Git / GitHub</span>
+        <span class="tag">APIs</span><span class="tag">Canva</span><span class="tag">AI-assisted coding</span>
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><b>IT</b><span>Engineering</span></div>
+      <div class="fact"><b>Build</b><span>Hackathons & MVPs</span></div>
+      <div class="fact"><b>Design</b><span>Creative & visual work</span></div>
+      <div class="fact"><b>Learn</b><span>Code, projects & industry skills</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-head reveal"><h2>Things I've worked on</h2><p>A mix of technical projects, product ideas and creative work.</p></div>
+  <div class="projects">
+    <article class="glass project reveal"><div><div class="project-num">01 / HACKATHON</div><h3>HeritageGuide</h3><p>An intelligent heritage-site visitor guidance concept for places such as the Kailasa Temple at Ellora, with personalized journeys and offline support.</p></div><div class="mini">AI · Backend · UX concept</div></article>
+    <article class="glass project reveal"><div><div class="project-num">02 / PRODUCT</div><h3>LUMEN</h3><p>A photography portfolio curation and management concept covering photo libraries, AI-assisted suggestions, sequencing, collaboration and portfolio health.</p></div><div class="mini">Product · AI · Portfolio UX</div></article>
+    <article class="glass project reveal"><div><div class="project-num">03 / ACADEMIC</div><h3>Digital Counters</h3><p>A digital electronics case-study and presentation project exploring counters and their practical role in digital systems.</p></div><div class="mini">DCD · Presentation · Documentation</div></article>
+    <article class="glass project reveal"><div><div class="project-num">04 / CREATIVE</div><h3>Event Visuals</h3><p>Posters, reels and promotional visuals created for college workshops, activities and student events.</p></div><div class="mini">Canva · Motion · Social media</div></article>
+    <article class="glass project reveal"><div><div class="project-num">05 / LEARNING</div><h3>DSA Practice</h3><p>Hands-on practice with searching, sorting, linked lists, stacks, queues, trees and algorithmic thinking across C and Java.</p></div><div class="mini">C · Java · Algorithms</div></article>
+    <article class="glass project reveal"><div><div class="project-num">06 / EXPLORING</div><h3>Backend Journey</h3><p>Learning Node.js, Express.js, MongoDB, APIs, Git/GitHub, Postman and deployment with a focus on building useful MVPs.</p></div><div class="mini">Node · Express · MongoDB</div></article>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="section-head reveal"><h2>My journey</h2><p>Growing through academics, communities, creative work and technical experiments.</p></div>
+  <div class="glass timeline reveal">
+    <div class="timeline-item"><div class="year">ACADEMICS</div><div><h3>IT Engineering · TCET</h3><p>Building foundations across programming, DSA, DBMS, digital electronics, cloud computing and other core engineering subjects.</p></div></div>
+    <div class="timeline-item"><div class="year">COMMUNITY</div><div><h3>ISTE · TCET</h3><p>Exploring creative, sponsorship, hospitality and technology-related event work while contributing to college activities.</p></div></div>
+    <div class="timeline-item"><div class="year">CREATIVE</div><div><h3>Design & Visual Storytelling</h3><p>Working with Canva for posters, presentations, social content and event creatives, with a strong interest in visual design.</p></div></div>
+    <div class="timeline-item"><div class="year">BUILDING</div><div><h3>Hackathons & Development</h3><p>Learning to turn ideas into MVPs through backend development, APIs, databases, Git and AI-assisted coding.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head reveal"><h2>Beyond the screen</h2><p>The things that keep the creative side alive.</p></div>
+  <div class="interests">
+    <div class="interest reveal"><div class="icon">🎨</div><b>Design</b><br><span>Visuals, layouts & Canva</span></div>
+    <div class="interest reveal"><div class="icon">🎬</div><b>Movies</b><br><span>Stories, visuals & ideas</span></div>
+    <div class="interest reveal"><div class="icon">📚</div><b>Reading</b><br><span>Curiosity beyond coursework</span></div>
+    <div class="interest reveal"><div class="icon">🧁</div><b>Baking</b><br><span>Creative experiments offline</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="glass reveal" style="text-align:center;padding:55px 25px">
+    <div class="eyebrow">Let's connect</div>
+    <h2 style="font-size:clamp(2.3rem,6vw,4.5rem);letter-spacing:-.06em;margin-bottom:15px">Have an idea?<br><em style="font-family:Georgia,serif;color:var(--accent);font-weight:400">Let's build it.</em></h2>
+    <p style="color:var(--muted);margin:auto;max-width:560px">I'm always interested in learning, collaborating and turning interesting ideas into something real.</p>
+    <div class="buttons" style="justify-content:center">
+      <a class="btn primary" href="mailto:hello@example.com">Email me</a>
+      <a class="btn secondary" href="#" onclick="alert('Add your LinkedIn URL here!');return false;">LinkedIn ↗</a>
+      <a class="btn secondary" href="#" onclick="alert('Add your GitHub URL here!');return false;">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Made with curiosity · <strong>Madhura</strong> · 2026</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
